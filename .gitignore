@@ -3,9 +3,12 @@
 /public/storage
 /storage/*.key
 /vendor
+.gitignore
 .env
 .env.backup
 .phpunit.result.cache
+.sql
+.gitattributes
 Homestead.json
 Homestead.yaml
 npm-debug.log

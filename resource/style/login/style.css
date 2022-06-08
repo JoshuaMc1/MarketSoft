@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
 :root {
     --color-verde: #268367;
     --color-azul: #265C83;
     --color-blanco: #FFFFFF;
+    --body-font: 'Poppins', sans-serif;
 }
 
 * {
@@ -10,6 +13,11 @@
     box-sizing: border-box;
 }
 /*268367*/
+
+body {
+    font-family: var(--body-font);
+}
+
 .glass {
     background: #268367;
 

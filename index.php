@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es-HN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="resource/img/Logo-MarketSoft-2.1.png">
     <link rel="stylesheet" href="resource/libs/bootstrap/css/bootstrap.min.css">
+    <script src="resource/libs/alertifyjs/alertify.js"></script>
+    <link rel="stylesheet" href="resource/libs/alertifyjs/css/alertify.css" />
+    <link rel="stylesheet" href="resource/libs/alertifyjs/css/themes/default.css" />
     <link rel="stylesheet" href="resource/style/login/style.css?v=<?php echo rand()?>">
     <title>MarketSoft - Login</title>
 </head>
@@ -23,7 +26,7 @@
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-                                    <form>
+                                    <form method="POST" action="app/php/login/validate.php">
                                         <div class="d-flex align-items-center mb-5 pb-1">
                                             <img src="resource/img/Logo-MarketSoft-2.1.png" class="logo" alt="Logo de la empresa">
                                             <span class="h1 fw-bold mb-0">MarketSoft</span>
@@ -39,7 +42,7 @@
                                         </div>
                                         <div class="pt-1 mb-4">
                                             <div class="d-grid">
-                                                <button class="btn bg-green btn-lg btn-block" type="button">Iniciar Sesión</button>
+                                                <button class="btn bg-green btn-lg btn-block" type="submit">Iniciar Sesión</button>
                                             </div>
                                         </div>
                                     </form>
@@ -51,7 +54,8 @@
             </div>
         </div>
     </section>
+    <script src="resource/libs/jquery/jquery.min.js"></script>
     <script src="resource/libs/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="resource/js/login/validation.js?v=<?php echo rand();?>"></script>
 </body>
-
 </html>
