@@ -10,7 +10,7 @@
 	"sSearch":         "Buscar:",
 	"sUrl":            "",
 	"sInfoThousands":  ",",
-	"sLoadingRecords": "<i class='fas fa-spinner-third fa-spin'></i> Cargando...",
+	"sLoadingRecords": "<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span> Cargando...",
 	"oPaginate": {
 		"sFirst":    "Primero",
 		"sLast":     "Último",

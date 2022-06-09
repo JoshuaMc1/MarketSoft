@@ -10,6 +10,9 @@
     --bg-color: #121212;
     --sub-color: #B6CEFC;
     --white-color: #FFF;
+    --blue-color: #265C83;
+    --gray-color: #b3b3b3;
+    /* --body-color: ; */
     --red-color: #A72626;
     /*===== Fuente y tipografia =====*/
     --body-font: 'Poppins', sans-serif;
@@ -31,10 +34,12 @@
 body {
     position: relative;
     margin: 0;
-    padding: 2rem 0 0 6.75rem;
+    padding: 1rem 0 0 6rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     transition: .5s;
+    background: -webkit-linear-gradient(to right, var(--first-color), var(--blue-color));
+    background: linear-gradient(to right, var(--first-color), var(--blue-color));
 }
 
 h1 {
@@ -93,7 +98,7 @@ a {
     font-weight: 600;
 }
 
-.j-nav__logo:hover{
+.j-nav__logo:hover {
     text-decoration: none;
     color: var(--white-color);
 }
@@ -131,7 +136,7 @@ a {
 
 /* Add padding body */
 .body-pd {
-    padding: 2rem 0 0 16rem;
+    padding: 1rem 0 0 15rem;
 }
 
 /*Active links menu*/
@@ -174,6 +179,89 @@ a {
 }
 
 .j-btn-exit {
+    transition: .5s;
+    font-size: 14pt;
     background-color: var(--red-color);
     color: var(--white-color);
+}
+
+.j-btn-exit:hover {
+    background-color: var(--first-color);
+    color: var(--white-color);
+}
+
+.j-dropdown-color{
+    background-color: var(--first-color);
+}
+
+.content {
+    overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: none;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.content::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-track:hover,
+.content::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}
+
+footer.sticky-footer {
+    padding: 2rem 0;
+    flex-shrink: 0;
+}
+
+footer.sticky-footer .copyright {
+    line-height: 1;
+    font-size: 0.8rem;
+}
+
+.bg-footer {
+    background-color: var(--bg-color);
+    color: var(--gray-color);
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--bg-color);
+    border: .1px solid white;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background-color: var(--first-color);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--white-color);
+}
+
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active {
+    background: var(--gray-color);
 }

@@ -6,9 +6,16 @@ const showMenu = (toggleId, navbarId, bodyId) => {
 
     if (toggle && navbar) {
         toggle.addEventListener('click', () => {
+            // let drops = document.getElementById("drop");
             navbar.classList.toggle('j-expander')
-
             bodypadding.classList.toggle('body-pd')
+            // if(navbar.classList.contains('j-expander')){
+            //     drops.classList.add("dropdown")
+            //     drops.classList.remove("dropend")
+            // }else{
+            //     drops.classList.remove("dropdown")
+            //     drops.classList.add("dropend");
+            // }
         })
     }
 }
