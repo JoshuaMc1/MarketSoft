@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item j-btn-exit" href="#" data-bs-toggle="tooltip"
+                            <a class="dropdown-item j-btn-exit" href="../" data-bs-toggle="tooltip"
                                 data-bs-placement="right" title="Cerrar sesión">
                                 <i class="fas fa-sign-out fa-fade j-nav__icon"></i> Cerrar sesión
                             </a>
@@ -120,8 +120,7 @@
             <div class="col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h1 class="fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nulla beatae
-                            reiciendis esse numquam blanditiis!</h1>
+                        <h1 class="fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat dolor, provident optio aperiam repudiandae in recusandae sequi perspiciatis aut alias.</h1>
                     </div>
                 </div>
             </div>

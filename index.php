@@ -10,11 +10,17 @@
     <script src="resource/libs/alertifyjs/alertify.js"></script>
     <link rel="stylesheet" href="resource/libs/alertifyjs/css/alertify.css" />
     <link rel="stylesheet" href="resource/libs/alertifyjs/css/themes/default.css" />
-    <link rel="stylesheet" href="resource/style/login/style.css?v=<?php echo rand()?>">
+    <link rel="stylesheet" href="resource/style/login/style.css">
     <title>MarketSoft - Login</title>
 </head>
 
 <body>
+    <?php
+        if(isset($_GET['status'])){
+            require_once("app/php/utilities/utilidades.php");
+            $utilidades = new utilidades();
+            $utilidades::returnStatus($_GET['status']);
+        }?>
     <section class="vh-100 glass">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -33,11 +39,11 @@
                                         </div>
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicio de sesión</h5>
                                         <div class="form-floating mb-4">
-                                            <input type="text" id="form2Example17" class="form-control form-control-lg" />
+                                            <input type="text" id="form2Example17" class="form-control form-control-lg" autocomplete="off"/>
                                             <label for="form2Example17">Usuario</label>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg" autocomplete="off"/>
                                             <label for="form2Example27">Contraseña</label>
                                         </div>
                                         <div class="pt-1 mb-4">
@@ -56,6 +62,6 @@
     </section>
     <script src="resource/libs/jquery/jquery.min.js"></script>
     <script src="resource/libs/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="resource/js/login/validation.js?v=<?php echo rand();?>"></script>
+    <script src="resource/js/login/validation.js"></script>
 </body>
 </html>

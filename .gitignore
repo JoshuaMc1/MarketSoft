@@ -1,6 +1,8 @@
 .phpunit.result.cache
-.sql
-.gitattributes
+*.sql
+.htaccess
+.env
 Homestead.json
 Homestead.yaml
 /config/db_params.php
+/config/start_sessions.php

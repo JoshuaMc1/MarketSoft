@@ -8,6 +8,7 @@
     /*===== Colores =====*/
     --first-color: #268367;
     --bg-color: #121212;
+    --bg-color-2 : #272727;
     --sub-color: #B6CEFC;
     --white-color: #FFF;
     --blue-color: #265C83;
@@ -23,6 +24,25 @@
     --z-fixed: 100;
 }
 
+.bg-gradient-primary {
+    background: linear-gradient(to right, var(--bg-color), var(--bg-color-2));
+}
+
+.mt-n4 {
+    margin-top: -1.5rem !important;
+}
+
+.z-index-2 {
+    z-index: 2 !important;
+}
+
+.border-radius-lg {
+    border-radius: 0.5rem;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
 
 /*===== BASE =====*/
 *,
