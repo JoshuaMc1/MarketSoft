@@ -180,6 +180,7 @@ a {
 }
 
 .j-collapse__sublink {
+    max-width: 125px;
     color: var(--sub-color);
     font-size: var(--small-font-size);
 }

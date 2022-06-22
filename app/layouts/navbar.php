@@ -10,7 +10,7 @@
                         <a href="?View=Dashboard" class="j-nav__logo"><img src="../resource/img/Logo-MarketSoft-2.1.png" width="50rem" alt="Logo de la empresa"> MarketSoft</a>
                     </div>
                     <div class="j-nav__list">
-                        <a href="?View=Dashboard" class="j-nav__link j-active" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
+                        <a href="?View=Dashboard" class="j-nav__link" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
                             <i class="fas fa-tachometer-alt j-nav__icon"></i>
                             <span class="j-nav__name">Dashboard</span>
                         </a>';
@@ -47,7 +47,8 @@
             </nav>
             </div>';
 
-        public static function buildNavbar($id_user){
+        public static function buildNavbar($id_user, $view)
+        {
             include_once("php/utilities/utilidades.php");
             $utilidades = new utilidades;
             $navBar = include_once("optionsNavbar.php");

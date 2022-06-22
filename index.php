@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="resource/img/Logo-MarketSoft-2.1.png">
+    <link rel="stylesheet" href="resource/libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="resource/libs/bootstrap/css/bootstrap.min.css">
     <script src="resource/libs/alertifyjs/alertify.js"></script>
     <link rel="stylesheet" href="resource/libs/alertifyjs/css/alertify.css" />
     <link rel="stylesheet" href="resource/libs/alertifyjs/css/themes/default.css" />
-    <link rel="stylesheet" href="resource/style/login/style.css">
+    <link rel="stylesheet" href="resource/style/login/style-min.css">
     <title>MarketSoft - Login</title>
 </head>
 
@@ -32,23 +33,23 @@
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-                                    <form method="POST" action="app/php/login/validate.php">
+                                    <form method="POST" action="auth.php" id="form">
                                         <div class="d-flex align-items-center mb-5 pb-1">
                                             <img src="resource/img/Logo-MarketSoft-2.1.png" class="logo" alt="Logo de la empresa">
                                             <span class="h1 fw-bold mb-0">MarketSoft</span>
                                         </div>
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicio de sesión</h5>
+                                        <h4 class="fw-bold mb-3 pb-3 text-center" style="letter-spacing: 2px;">Inicio de sesión</h4>
                                         <div class="form-floating mb-4">
-                                            <input type="text" id="form2Example17" class="form-control form-control-lg" autocomplete="off"/>
-                                            <label for="form2Example17">Usuario</label>
+                                            <input type="text" id="txtUser" name="Username" class="form-control form-control-lg" autocomplete="off"/>
+                                            <label for="txtUser" class="fw-bold">Usuario</label>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" autocomplete="off"/>
-                                            <label for="form2Example27">Contraseña</label>
+                                            <input type="password" id="txtPassword" name="Password" class="form-control form-control-lg" autocomplete="off"/>
+                                            <label for="txtPassword" class="fw-bold">Contraseña</label>
                                         </div>
                                         <div class="pt-1 mb-4">
                                             <div class="d-grid">
-                                                <button class="btn bg-green btn-lg btn-block" type="submit">Iniciar Sesión</button>
+                                                <button class="btn bg-green btn-lg btn-block" type="submit"><i class="fas fa-sign-in fa-fade"></i> Iniciar Sesión</button>
                                             </div>
                                         </div>
                                     </form>
@@ -60,8 +61,9 @@
             </div>
         </div>
     </section>
+    <script src="resource/libs/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="resource/libs/jquery/jquery.min.js"></script>
     <script src="resource/libs/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="resource/js/login/validation.js"></script>
+    <script src="resource/js/login/validation-min.js"></script>
 </body>
 </html>

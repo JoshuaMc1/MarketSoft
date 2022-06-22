@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['dateSession'] = date("d-m-Y H:i:s");
 // Establecer tiempo de vida de la sesión en segundos
-$inactividad = 900;
+$inactividad = 1800;
 // Comprobar si $_SESSION["timeout"] está establecida
 if(isset($_SESSION["timeout"])){
     // Calcular el tiempo de vida de la sesión (TTL = Time To Live)

@@ -1,0 +1,3 @@
+ErrorDocument 403 /www/MarketSoft/error/error403.html
+ErrorDocument 500 /www/MarketSoft/error/error500.html
+ErrorDocument 504 /www/MarketSoft/error/error504.html

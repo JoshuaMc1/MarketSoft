@@ -1,12 +1,16 @@
 <?php
 class utilidades
 {
-    public static function consult($sql)
+    public static function consult($conecction, $sql)
     {
+        $result = mysqli_query($conecction, $sql);
+        return mysqli_num_rows($result) > 0 ? true : false;
     }
 
-    public static function returnConsult($sql)
+    public static function returnConsult($conecction, $sql)
     {
+        $result = mysqli_query($conecction, $sql);
+        return mysqli_fetch_array($result);
     }
 
     public static function returnPermissions($id_user)
@@ -22,25 +26,25 @@ class utilidades
             $_SESSION['nombre'] = $data['primerNombre'];
             $_SESSION['apellido'] = $data['primerApellido'];
             $_SESSION['photo'] = $data['nombreImg'];
-        } else echo "No Existe";
+        }
         require_once($path."config/db_close_connection.php");
     }
 
     //Es pra validar si los datos enviados estan vacios
-    public static function validate_empty($variable)
+    public static function validateEmpty($variable)
     {
-        if (strlen($variable) < 3) return false;
-        else return true;
+        return strlen($variable) > 3 ? true : false;
     }
 
-    //Es para verificar que la contraseña no lleva caracteres especiales por ejemplo <>
-    public static function validate_allowed($variable)
+    //Es para verificar que la contraseña no lleva caracteres especiales por ejemplo <@#$%^&*()>
+    public static function validateAllowed($variable)
     {
-        if (mb_ereg("^[a-zA-Z0-9\-_]$", $variable)) return false;
-        else return true;
+        if(preg_match_all("/[a-zA-Z0-9_-]/",$variable) === strlen($variable))return "ok";
+        else return "no";
     }
 
-    public static function returnStatus($status){
+    public static function returnStatus($status)
+    {
         switch($status){
             //s_no significa que los datos o credenciales no coinciden o son incorrectos
             case 's_no':
@@ -75,6 +79,18 @@ class utilidades
                     </script>
                 ';
                 break;
+            case "s_timeout":
+                echo '
+                    <script>
+                        alertify.set("notifier","position", "top-center");
+                        alertify.error("Se a cerrado la sesión por inactividad");
+                    </script>
+                ';
+                break;
         }
     }
-}
+}?>
+
+<html>
+    
+</html>

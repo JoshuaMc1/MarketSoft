@@ -1,38 +1,30 @@
-/*===== EXPANDER MENU  =====*/
-const showMenu = (toggleId, navbarId, bodyId) => {
-    const toggle = document.getElementById(toggleId),
-        navbar = document.getElementById(navbarId),
-        bodypadding = document.getElementById(bodyId)
+/*Variables*/
+const toggle = document.getElementById('j-nav-toggle'),
+    navbar = document.getElementById('j-navbar'),
+    bodypadding = document.getElementById('body-pd'), 
+    linkCollapse = document.getElementsByClassName('j-collapse__link'), 
+    linkColor = document.querySelectorAll('.j-nav__link');
+var i, tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 
-    if (toggle && navbar) {
-        toggle.addEventListener('click', () => {
-            // let drops = document.getElementById("drop");
-            navbar.classList.toggle('j-expander')
-            bodypadding.classList.toggle('body-pd')
-            // if(navbar.classList.contains('j-expander')){
-            //     drops.classList.add("dropdown")
-            //     drops.classList.remove("dropend")
-            // }else{
-            //     drops.classList.remove("dropdown")
-            //     drops.classList.add("dropend");
-            // }
-        })
-    }
+/*Funciones */
+toggle.addEventListener('click', () => {
+    bodypadding.classList.toggle('body-pd')
+    navbar.classList.toggle('j-expander')
+    if (navbar.classList.contains("j-expander") || bodypadding.classList.contains("body-pd")) {
+        localStorage.setItem("key-nav", "enabled");
+    } else localStorage.setItem("key-nav", "disabled");
+});
+
+if (localStorage.getItem('key-nav') != 'enabled') {
+    bodypadding.classList.remove('body-pd')
+    navbar.classList.remove('j-expander')
 }
-showMenu('j-nav-toggle', 'j-navbar', 'body-pd')
 
-/*===== LINK ACTIVE  =====*/
-const linkColor = document.querySelectorAll('.j-nav__link')
 function colorLink() {
     linkColor.forEach(l => l.classList.remove('j-active'))
     this.classList.add('j-active')
 }
 linkColor.forEach(l => l.addEventListener('click', colorLink))
-
-
-/*===== COLLAPSE MENU  =====*/
-const linkCollapse = document.getElementsByClassName('j-collapse__link')
-var i
 
 for (i = 0; i < linkCollapse.length; i++) {
     linkCollapse[i].addEventListener('click', function () {
@@ -44,7 +36,6 @@ for (i = 0; i < linkCollapse.length; i++) {
     })
 }
 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
