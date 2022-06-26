@@ -47,19 +47,30 @@
             </nav>
             </div>';
 
-        public static function buildNavbar($id_user, $view)
+        public static function buildNavbar()
         {
-            include_once("php/utilities/utilidades.php");
-            $utilidades = new utilidades;
-            $navBar = include_once("optionsNavbar.php");
-            $utilidades::returnPermissions($id_user);
-            echo navbar::inicio;
-            echo $navBar[1], $navBar[2], $navBar[3], $navBar[4], $navBar[5];
-            echo navbar::cierre1;
-            echo '
-                <img src="../resource/img/usuarios/'.$_SESSION['photo'].'" width="36" height="36" class="rounded-circle">
-                <span class="d-none d-sm-inline mx-1">'.$_SESSION['nombre']." ".$_SESSION['apellido'].'</span>
-            ';
-            echo navbar::cierre2;
+            try{
+                $navBar = include_once("optionsNavbar.php");
+                $permisos = [$_SESSION['p1'], $_SESSION['p2'], $_SESSION['p3'], $_SESSION['p4'], $_SESSION['p5']];
+                echo navbar::inicio;
+                navbar::buildOptions($permisos, $navBar);
+                echo navbar::cierre1;
+                echo '
+                    <img src="../resource/img/usuarios/'.$_SESSION['photo'].'" width="36" height="36" class="rounded-circle" alt="Foto de perfil">
+                    <span class="d-none d-sm-inline mx-1">'.$_SESSION['nombre']." ".$_SESSION['apellido'].'</span>
+                ';
+                echo navbar::cierre2;
+            }catch(Exception $ex){
+                echo $ex->getMessage();
+                die();
+            }
+        }
+
+        public static function buildOptions($permisos, $navBar){
+            if($permisos[0] == "1") echo $navBar[1];
+            if($permisos[1] == "1") echo $navBar[2];
+            if($permisos[2] == "1") echo $navBar[3];
+            if($permisos[3] == "1") echo $navBar[4];
+            if($permisos[4] == "1") echo $navBar[5];
         }
     }

@@ -1,0 +1,11 @@
+VENTAS POR FECHA DEL USUARIO
+SELECT COUNT(*) AS cantidad, u.usuario,f.total FROM factura f INNER JOIN usuarios u ON f.idUsuario=u.idUsuario WHERE f.idUsuario=1 AND f.fechaVenta LIKE '%2022-06-26%' GROUP BY u.usuario;
+
+VENTAS POR MES
+SELECT COUNT(*) AS ventasMes FROM factura WHERE fechaVenta LIKE '2022-%06%';
+
+VENTAS POR AÑO
+SELECT COUNT(*) AS ventasAño FROM factura WHERE fechaVenta LIKE '%2022%';
+
+VENTAS ENTRE UN RANGO DE AÑOS
+SELECT COUNT(*) AS ventasAño FROM factura WHERE fechaVenta BETWEEN '2020-01-01' AND '2022-12-31';

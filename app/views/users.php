@@ -1,11 +1,12 @@
 <?php
-    include("layouts/navbar.php");
-    $navbar = new navbar;
-    include("includes/header.html");
+include("layouts/navbar.php");
+include("includes/header.html");
+$navbar = new navbar;
 ?>
+
 <body class="body-pd" id="body-pd">
     <header>
-        <?php $navbar->buildNavbar($_SESSION['user'], $vista);?>
+        <?php $navbar->buildNavbar(); ?>
     </header>
     <section class="container-fluid mb-4" id="contenido">
         <div class="row">
@@ -24,13 +25,13 @@
                         </div>
                     </div>
                     <div class="card-body mt-3">
-                        <h5 class="fw-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, maiores.</h5>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa voluptates dolor harum nobis sunt. Eius, unde nam similique culpa quasi deleniti dignissimos iure ex magnam laudantium, quo, sed vero earum explicabo nihil officia corporis commodi cupiditate. Vel excepturi unde doloremque qui, ut facilis. Velit, maiores. Aperiam optio ullam omnis!
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <?php include("includes/footer.html");?>
+    <?php include("includes/footer.html"); ?>
 </body>
 
 </html>
