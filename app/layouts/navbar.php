@@ -33,6 +33,11 @@
                         <hr class="dropdown-divider text-white">
                     </li>
                     <li>
+                        <a class="dropdown-item mb-2" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Acerca de">
+                            <i class="fas fa-info-circle j-nav__icon"></i> Acerca de
+                        </a>
+                    </li>
+                    <li>
                         <a class="dropdown-item mb-2" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Configuración">
                             <i class="fas fa-cog j-nav__icon"></i> Configuración
                         </a>

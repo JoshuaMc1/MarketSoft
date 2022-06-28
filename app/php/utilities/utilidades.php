@@ -13,7 +13,18 @@ class utilidades
         return mysqli_fetch_array($result);
     }
 
-    public static function createDataInSession($id_user, $path) {
+    public static function returnConsultJSON($connection, $sql)
+    {
+        $result = mysqli_query($connection, $sql);
+        $data = array();
+        while($row = $result->fetch_assoc()){
+            $data[] = $row;
+        }
+        return json_encode($data, JSON_UNESCAPED_UNICODE);
+    }
+
+    public static function createDataInSession($id_user, $path) 
+    {
         require_once($path."config/db_connection.php");
         $sql = mysqli_query($connection, "SELECT * FROM empleados WHERE idUsuario='$id_user'") or die(mysqli_error($connection));
         $permisos = utilidades::returnConsult($connection, "SELECT * FROM permisos WHERE idUsuario='$id_user'");
