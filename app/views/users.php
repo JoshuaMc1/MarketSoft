@@ -28,7 +28,7 @@ $navbar = new navbar;
                                             <a class="nav-link active" aria-current="page" href="?View=Users"><i class="fas fa-user-plus"></i> Agregar usuarios</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="?View=Admin_user"><i class="fas fa-user-edit"></i> Administrar usuarios</a>
+                                            <a class="nav-link" href="?View=Admin_User"><i class="fas fa-user-edit"></i> Administrar usuarios</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#"><i class="fas fa-user-shield"></i> Editar permisos de usuarios</a>

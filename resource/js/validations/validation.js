@@ -1,33 +1,35 @@
 $(document).ready(function () {
-    var path ="../";
+    var path = "../";
     let tabla = $('#tableAdminUser').DataTable({
+        "destroy": true,
         "ajax": {
             "url": "php/users/tablaUsuarios.php",
             "dataSrc": ''
         },
         "columns": [
-            {'data': 'idUsuario' },
-            {'data': 'usuario' },
-            {'data': 'dni' },
-            {'data': 'primerNombre' },
-            {'data': 'segundoNombre' },
-            {'data': 'primerApellido' },
-            {'data': 'segundoApellido' },
-            {'data': 'telefono' },
-            {'data': 'direccion' },
-            {'data': 'correo' },
-            {'data': 'genero' }
+            { 'data': 'idUsuario' },
+            { 'data': 'usuario' },
+            { 'data': 'dni' },
+            { 'data': 'primerNombre' },
+            { 'data': 'segundoNombre' },
+            { 'data': 'primerApellido' },
+            { 'data': 'segundoApellido' },
+            { 'data': 'telefono' },
+            { 'data': 'direccion' },
+            { 'data': 'correo' },
+            { 'data': 'genero' },
+            { 'defaultContent': '<div class="btn-group" role="group"><button type="button" class="btn btn-warning" id="btnEditar"><i class="fas fa-edit"></i></button><button type="button" class="btn btn-danger" id="btnEliminar" data-bs-toggle="modal" data-bs-target="#modal1"><i class="fa fa-trash"></i></button></div>' }
         ],
         language: {
             "url": "../resource/spanish.json"
         }
     });
 
-    $('#tableAdminUser tbody').on('click', 'tr', function () {
-        var data = tabla.row( this ).data();
+    $('#tableAdminUser tbody').on('click', 'button#btnEditar', function () {
+        var data = tabla.row($(this).parents("tr")).data();
         asignarValores(data);
 
-        function asignarValores(data){
+        function asignarValores(data) {
             $("#txtId").val(data['idUsuario']);
             $("#txtDNI").val(data['dni']);
             $("#txtPrimerNombre").val(data['primerNombre']);
@@ -38,21 +40,14 @@ $(document).ready(function () {
             $("#txtDireccion").val(data['direccion']);
             $("#txtCorreo").val(data['correo']);
             $("#txtUsuario").val(data['usuario']);
-            $("#imgPerfil").attr('src', path+data['rutaImg']+data['nombreImg']);
-            if(data['genero'] == "Masculino") $("#slcSexo").val("1");
+            $("#imgPerfil").attr('src', path + data['rutaImg'] + data['nombreImg']);
+            if (data['genero'] == "Masculino") $("#slcSexo").val("1");
             else $("#slcSexo").val("2");
         }
-    } );
+    });
 
-    $("#btnEliminar").click(function () { 
-        var param = $("#txtId").val();
-        $.ajax({
-            type: "POST",
-            url: "php/users/deleteUser.php",
-            data: param,
-            success: function () {
-                alert("Todo bien");
-            }
-        });
+    $("#tableAdminUser tbody").on('click', 'button#btnEliminar', function () {
+        var data = tabla.row($(this).parents("tr")).data();
+        $("#formEliminarUsuario #txtId").val(data['idUsuario']);
     });
 });

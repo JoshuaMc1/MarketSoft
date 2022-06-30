@@ -1,18 +1,26 @@
 <?php
 class utilidades
 {
+    //Realizar una consulta a la base de datos y retorna si encontro el resultado
     public static function consult($connection, $sql)
     {
         $result = mysqli_query($connection, $sql);
         return mysqli_num_rows($result) > 0 ? true : false;
     }
 
+    //Realizar operaciones como UPDATE, DELETE y INSERT
+    public static function crud($connection, $sql){
+        return mysqli_query($connection, $sql);
+    }
+
+    //Retorna el primer valor ve la consulta
     public static function returnConsult($connection, $sql)
     {
         $result = mysqli_query($connection, $sql);
         return mysqli_fetch_array($result);
     }
 
+    //Retorna los datos en formato JSON
     public static function returnConsultJSON($connection, $sql)
     {
         $result = mysqli_query($connection, $sql);
@@ -23,6 +31,7 @@ class utilidades
         return json_encode($data, JSON_UNESCAPED_UNICODE);
     }
 
+    //Crea las valiables de sesion
     public static function createDataInSession($id_user, $path) 
     {
         require_once($path."config/db_connection.php");
@@ -42,7 +51,7 @@ class utilidades
         require_once($path."config/db_close_connection.php");
     }
 
-    //Es pra validar si los datos enviados estan vacios
+    //Es para validar si los datos enviados estan vacios
     public static function validateEmpty($variable)
     {
         return strlen($variable) > 3 ? true : false;
@@ -54,7 +63,8 @@ class utilidades
         if(preg_match_all("/[a-zA-Z0-9_-]/",$variable) === strlen($variable))return "ok";
         else return "no";
     }
-
+    
+    //Aqui se definen los status de error
     public static function returnStatus($status)
     {
         switch($status){
@@ -106,9 +116,18 @@ class utilidades
                     </script>
                 ';
                 break;
+            case "s_undeclared":
+                echo '
+                    <script>
+                        alertify.set("notifier","position", "top-center");
+                        alertify.error("Error al verificar variables o dichas variables no existen");
+                    </script>
+                ';
+                break;
         }
     }
 
+    //Se utiliza para mostrar mensajes en pantalla o alertas
     public static function message($msg, $type)
     {
         switch($type){

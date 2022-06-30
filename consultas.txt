@@ -9,3 +9,5 @@ SELECT COUNT(*) AS ventasAño FROM factura WHERE fechaVenta LIKE '%2022%';
 
 VENTAS ENTRE UN RANGO DE AÑOS
 SELECT COUNT(*) AS ventasAño FROM factura WHERE fechaVenta BETWEEN '2020-01-01' AND '2022-12-31';
+
+// htmlspecialchars(strip_tags());
