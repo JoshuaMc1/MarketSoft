@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-                                    <form method="POST" action="auth.php" id="form">
+                                    <form method="POST" action="auth" id="form">
                                         <div class="d-flex align-items-center mb-5 pb-1">
                                             <img src="resource/img/Logo-MarketSoft-2.1.png" class="logo" alt="Logo de la empresa">
                                             <span class="h1 fw-bold mb-0">MarketSoft</span>
