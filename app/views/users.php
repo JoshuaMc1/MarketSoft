@@ -30,12 +30,12 @@ $navbar = new navbar;
                                         <li class="nav-item">
                                             <a class="nav-link" href="?View=Admin_User"><i class="fas fa-user-edit"></i> Administrar usuarios</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#"><i class="fas fa-user-shield"></i> Editar permisos de usuarios</a>
+                                        <!-- <li class="nav-item">
+                                            <a class="nav-link" href="?View=User_Permits"><i class="fas fa-user-shield"></i> Editar permisos de usuarios</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#"><i class="fas fa-user-slash"></i> Habilitar/Deshabilitar usuarios</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 my-4">
@@ -53,7 +53,7 @@ $navbar = new navbar;
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="btnImagen" class="form-label">Seleccione una imagen</label>
-                                                        <input class="form-control" type="file" id="btnImagen">
+                                                        <input class="form-control" type="file" id="btnImagen" name="imagenPerfil" accept="image/*"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,43 +73,43 @@ $navbar = new navbar;
                                                     <div class="row">
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtUsuario">Nombre de usuario:</label>
-                                                            <input type="text" name="" id="txtUsuario" class="form-control" autocomplete="off" />
+                                                            <input type="text" name="usuario" id="txtUsuario" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtPassword">Contraseña:</label>
-                                                            <input type="password" name="" id="txPassword" class="form-control" autocomplete="off" />
+                                                            <input type="password" name="clave" id="txPassword" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-12 mb-2">
                                                             <label class="form-label" for="txtDNI">Numero de identidad:</label>
-                                                            <input type="text" name="" id="txtDNI" class="form-control" autocomplete="off" />
+                                                            <input type="text" name="dni" id="txtDNI" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtPrimerNombre">Primer nombre:</label>
-                                                            <input type="text" name="" id="txtPrimerNombre" class="form-control" autocomplete="off" />
+                                                            <input type="text" title="noNumber" name="primerNombre" id="txtPrimerNombre" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtSegundoNombre">Segundo nombre:</label>
-                                                            <input type="text" name="" id="txtSegundoNombre" class="form-control" autocomplete="off" />
+                                                            <input type="text" title="noNumber" name="segundoNombre" id="txtSegundoNombre" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtPrimerApellido">Primer apellido:</label>
-                                                            <input type="text" name="" id="txtPrimerApellido" class="form-control" autocomplete="off" />
+                                                            <input type="text" title="noNumber" name="primerApellido" id="txtPrimerApellido" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtSegundoApellido">Segundo apellido:</label>
-                                                            <input type="text" name="" id="txtSegundoApellido" class="form-control" autocomplete="off" />
+                                                            <input type="text" title="noNumber" name="segundoApellido" id="txtSegundoApellido" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-12 mb-2">
                                                             <label class="form-label" for="txtCorreo">Correo electronico:</label>
-                                                            <input type="email" name="" id="txtCorreo" class="form-control" autocomplete="off" />
+                                                            <input type="email" name="correo" id="txtCorreo" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="txtTelefono">Numero de telefono:</label>
-                                                            <input type="text" name="" id="txtTelefono" class="form-control" autocomplete="off" />
+                                                            <input type="text" name="telefono" id="txtTelefono" class="form-control" autocomplete="off" />
                                                         </div>
                                                         <div class="col-lg-6 mb-2">
                                                             <label class="form-label" for="slcSexo">Sexo:</label>
-                                                            <select class="form-select" id="slcSexo">
+                                                            <select class="form-select" name="sexo" id="slcSexo">
                                                                 <option selected value="">Seleccione una opción</option>
                                                                 <option value="1">Masculino</option>
                                                                 <option value="2">Femenino</option>
@@ -117,7 +117,7 @@ $navbar = new navbar;
                                                         </div>
                                                         <div class="col-lg-12 mb-2">
                                                             <label class="form-label" for="txtDireccion">Direccion:</label>
-                                                            <textarea class="form-control" id="txtDireccion" rows="3"></textarea>
+                                                            <textarea class="form-control" name="direccion" id="txtDireccion" rows="3"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,31 +136,31 @@ $navbar = new navbar;
                                                             <div class="row">
                                                                 <div class="col-lg-12 mb-3">
                                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para realizar actividades de inventario">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="permiso1">
+                                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso1" value="1">
                                                                         <label class="form-check-label" for="permiso1">Permiso inventario</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 mb-3">
                                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para ver el panel de facturación">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="permiso2">
+                                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso2" value="2">
                                                                         <label class="form-check-label" for="permiso2">Permiso facturación</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 mb-3">
                                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para realizar compra de inventario">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="permiso3">
+                                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso3" value="3">
                                                                         <label class="form-check-label" for="permiso3">Permiso compra</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 mb-3">
                                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para agregar usuarios/editar/eliminar usuarios">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="permiso4">
+                                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso4" value="4">
                                                                         <label class="form-check-label" for="permiso4">Permiso usuarios</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 mb-3">
                                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para generar reportes">
-                                                                        <input class="form-check-input" type="checkbox" role="switch" id="permiso5">
+                                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso5" value="5">
                                                                         <label class="form-check-label" for="permiso5">Permiso reportes</label>
                                                                     </div>
                                                                 </div>
@@ -188,7 +188,13 @@ $navbar = new navbar;
             </div>
         </div>
     </section>
-    <?php include("includes/footer.html"); ?>
+    <?php 
+        include("includes/footer.html"); 
+        if (isset($_GET['message'])) {
+            if ($_GET['message'] === "ok") $utilidades::message("Registro creado exitosamente", "1");
+            else $utilidades::message("Error: No se registrado el usuario", "2");
+        }
+    ?>
 </body>
 
 </html>

@@ -41,9 +41,10 @@ class utilidades
             $data = mysqli_fetch_assoc($sql);
             $_SESSION['nombre'] = $data['primerNombre'];
             $_SESSION['apellido'] = $data['primerApellido'];
+            $_SESSION['pathPhoto'] = $data['rutaImg'];
             $_SESSION['photo'] = $data['nombreImg'];
-            $_SESSION['p1'] = $permisos['p_inventario'];
-            $_SESSION['p2'] = $permisos['p_facturacion'];
+            $_SESSION['p2'] = $permisos['p_inventario'];
+            $_SESSION['p1'] = $permisos['p_facturacion'];
             $_SESSION['p3'] = $permisos['p_compras'];
             $_SESSION['p4'] = $permisos['p_usuarios'];
             $_SESSION['p5'] = $permisos['p_reportes'];
@@ -54,7 +55,7 @@ class utilidades
     //Es para validar si los datos enviados estan vacios
     public static function validateEmpty($variable)
     {
-        return strlen($variable) > 3 ? true : false;
+        return strlen($variable) >= 3 ? true : false;
     }
 
     //Es para verificar que la contraseña no lleva caracteres especiales por ejemplo <@#$%^&*()>

@@ -5,8 +5,8 @@
         if (!$connection) {
             die("Conexion fallida: " . mysqli_connect_error());
         }
-    } catch (PDOException $e) {
-        print "¡Error!: " . $e->getMessage() . "<br/>";
+    } catch (Exception $e) {
+        echo "¡Error!: al conectarse a la base de datos<br/>";
         die();
     }
 ?>

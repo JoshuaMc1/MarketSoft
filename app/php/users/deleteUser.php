@@ -29,6 +29,6 @@
             exit();
         }
     }catch(Exception $ex){
-        echo $instancia::message("Error: ".$ex,"2");;
+        echo "Error: ".$ex;
     }
 ?>

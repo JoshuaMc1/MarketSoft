@@ -11,3 +11,52 @@ VENTAS ENTRE UN RANGO DE AÑOS
 SELECT COUNT(*) AS ventasAño FROM factura WHERE fechaVenta BETWEEN '2020-01-01' AND '2022-12-31';
 
 // htmlspecialchars(strip_tags());
+
+
+ACTUALIZAR INFORMACION DEL USUARIO Y EMPLEADO para PROCEDIMIENTO DE ALMACENADO
+UPDATE
+    usuarios u
+INNER JOIN empleados e ON
+    u.idUsuario = e.idUsuario
+SET
+    u.usuario = nusuario,
+    e.dni = ndni,
+    e.primerNombre = npn,
+    e.segundoNombre = nsn,
+    e.primerApellido = npa,
+    e.segundoApellido = nsa,
+    e.telefono = ntelefono,
+    e.direccion = ndireccion,
+    e.correo = ncorreo,
+    e.idGenero = ngenero
+WHERE
+    u.idUsuario = userID AND e.idUsuario = userID
+
+
+
+INSERT INTO empleados(
+    idUsuario,
+    dni,
+    primerNombre,
+    segundoNombre,
+    primerApellido,
+    segundoApellido,
+    telefono,
+    direccion,
+    corre,
+    idGenero,
+    rutaImg,
+    nombreImg,
+    fechaCreacion
+)
+VALUES('', '', '', '', '', '', '', '', '', '', '', '', '')
+
+INSERT INTO permisos(
+    idUsuario,
+    p_inventario,
+    p_facturacion,
+    p_compras,
+    p_usuarios,
+    p_reportes
+)
+VALUES('', '', '', '', '', '')
