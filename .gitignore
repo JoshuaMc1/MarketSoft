@@ -5,3 +5,4 @@
 Homestead.json
 Homestead.yaml
 /config/*.php
+*.txt

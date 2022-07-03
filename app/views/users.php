@@ -18,9 +18,9 @@ $navbar = new navbar;
                 </div>
             </div>
             <div class="col-lg-12 mb-3">
-                <div class="card shadow mb-2">
+                <div class="card shadow mb-2 bg-light">
                     <div class="card-body">
-                        <form action="php/users/createUser.php" method="POST" enctype="multipart/form-data" id="formAddUser">
+                        <form action="php/users/createUser" method="POST" enctype="multipart/form-data" id="formAddUser">
                             <div class="row">
                                 <div class="col-lg-12 mb-3">
                                     <ul class="nav nav-tabs">
@@ -30,12 +30,6 @@ $navbar = new navbar;
                                         <li class="nav-item">
                                             <a class="nav-link" href="?View=Admin_User"><i class="fas fa-user-edit"></i> Administrar usuarios</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="?View=User_Permits"><i class="fas fa-user-shield"></i> Editar permisos de usuarios</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#"><i class="fas fa-user-slash"></i> Habilitar/Deshabilitar usuarios</a>
-                                        </li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 my-4">

@@ -18,7 +18,7 @@ $navbar = new navbar;
                 </div>
             </div>
             <div class="col-lg-12 mb-2">
-                <div class="card shadow mb-2">
+                <div class="card shadow mb-2 bg-light">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12 mb-3">
@@ -29,12 +29,6 @@ $navbar = new navbar;
                                     <li class="nav-item">
                                         <a class="nav-link active" href="?View=Admin_User"><i class="fas fa-user-edit"></i> Administrar usuarios</a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link" href="?View=User_Permits"><i class="fas fa-user-shield"></i> Editar permisos de usuarios</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-user-slash"></i> Habilitar/Deshabilitar usuarios</a>
-                                    </li> -->
                                 </ul>
                             </div>
                             <div class="col-lg-12 my-4">
@@ -47,7 +41,7 @@ $navbar = new navbar;
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <form action="php/users/updateUser.php" method="POST" enctype="multipart/form-data" id="formAdminUser">
+                                                <form action="php/users/updateUser" method="POST" enctype="multipart/form-data" id="formAdminUser">
                                                     <div class="row">
                                                         <div class="col-lg-4 mb-2 text-center">
                                                             <img src="<?php echo $__DIR__ ?>resource/uploads/users/nophoto.png" class="img-fluid" id="imgPerfil" alt="Foto de perfil">
@@ -136,7 +130,7 @@ $navbar = new navbar;
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="d-grid">
-                                                            <button type="button" class="btn btn-primary"><i class="fas fa-user-lock"></i> Activar o desactivar usuarios</button>
+                                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuariosActivos"><i class="fas fa-user-lock"></i> Activar o desactivar usuarios</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,24 +147,26 @@ $navbar = new navbar;
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <table id="tableAdminUser" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Usuario</th>
-                                                    <th scope="col">DNI</th>
-                                                    <th scope="col">Primer nombre</th>
-                                                    <th scope="col">Segundo nombre</th>
-                                                    <th scope="col">Primer apellido</th>
-                                                    <th scope="col">Segundo apellido</th>
-                                                    <th scope="col">Telefono</th>
-                                                    <th scope="col">Dirección</th>
-                                                    <th scope="col">Correo</th>
-                                                    <th scope="col">Genero</th>
-                                                    <th scope="col" class="text-center">Acciones</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
+                                        <div class="table-responsive">
+                                            <table id="tableAdminUser" class="table table-striped table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Usuario</th>
+                                                        <th scope="col">DNI</th>
+                                                        <th scope="col">Primer nombre</th>
+                                                        <th scope="col">Segundo nombre</th>
+                                                        <th scope="col">Primer apellido</th>
+                                                        <th scope="col">Segundo apellido</th>
+                                                        <th scope="col">Telefono</th>
+                                                        <th scope="col">Dirección</th>
+                                                        <th scope="col">Correo</th>
+                                                        <th scope="col">Genero</th>
+                                                        <th scope="col" class="text-center">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -182,9 +178,9 @@ $navbar = new navbar;
 
         <!-- Modal eliminar usuarios -->
         <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog bd-light">
                 <div class="modal-content">
-                    <form action="php/users/deleteUser.php" method="POST" id="formEliminarUsuario">
+                    <form action="php/users/deleteUser" method="POST" id="formEliminarUsuario">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalTitulo">Eliminar usuario</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -204,9 +200,9 @@ $navbar = new navbar;
 
         <!-- Modal actualizar permisos de usuarios -->
         <div class="modal fade" id="modalPermisos" tabindex="-1" aria-labelledby="Permisos de usuarios" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-lg bd-light">
                 <div class="modal-content">
-                    <form action="#" method="POST" id="formPermisos">
+                    <form action="php/users/updatePermissions" method="POST" id="formPermisos">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalTitulo">Editar permisos de usuarios</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -229,31 +225,31 @@ $navbar = new navbar;
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para realizar actividades de inventario">
-                                                        <input class="form-check-input" type="checkbox" role="switch" name="permiso1" id="permiso1">
+                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso1" value="1">
                                                         <label class="form-check-label" for="permiso1">Permiso inventario</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para ver el panel de facturación">
-                                                        <input class="form-check-input" type="checkbox" role="switch" name="permiso2" id="permiso2">
+                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso2" value="2">
                                                         <label class="form-check-label" for="permiso2">Permiso facturación</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para realizar compra de inventario">
-                                                        <input class="form-check-input" type="checkbox" role="switch" name="permiso3" id="permiso3">
+                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso3" value="3">
                                                         <label class="form-check-label" for="permiso3">Permiso compra</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para agregar usuarios/editar/eliminar usuarios">
-                                                        <input class="form-check-input" type="checkbox" role="switch" name="permiso4" id="permiso4">
+                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso4" value="4">
                                                         <label class="form-check-label" for="permiso4">Permiso usuarios</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 mb-3">
                                                     <div class="form-check form-switch" data-bs-toggle="tooltip" data-bs-placement="right" title="Permiso para generar reportes">
-                                                        <input class="form-check-input" type="checkbox" role="switch" name="permiso5" id="permiso5">
+                                                        <input class="form-check-input" type="checkbox" role="switch" name="permisos[]" id="permiso5" value="5">
                                                         <label class="form-check-label" for="permiso5">Permiso reportes</label>
                                                     </div>
                                                 </div>
@@ -269,19 +265,21 @@ $navbar = new navbar;
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <table id="tablePermissions" class="table table-striped table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Usuario</th>
-                                                        <th scope="col">Permiso inventario</th>
-                                                        <th scope="col">Permiso facturación</th>
-                                                        <th scope="col">Permiso compra</th>
-                                                        <th scope="col">Permiso usuarios</th>
-                                                        <th scope="col">Permiso reportes</th>
-                                                        <th scope="col">Editar</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
+                                            <div class="table-responsive">
+                                                <table id="tablePermissions" class="table table-striped table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Usuario</th>
+                                                            <th scope="col">Permiso inventario</th>
+                                                            <th scope="col">Permiso facturación</th>
+                                                            <th scope="col">Permiso compra</th>
+                                                            <th scope="col">Permiso usuarios</th>
+                                                            <th scope="col">Permiso reportes</th>
+                                                            <th scope="col">Editar</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -297,13 +295,40 @@ $navbar = new navbar;
         </div>
 
         <!-- Modal activar o desactivar usuarios -->
-
+        <div class="modal fade" id="modalUsuariosActivos" tabindex="-1" aria-labelledby="Usuarios activos e inactivos" aria-hidden="true">
+            <div class="modal-dialog modal-lg bd-light">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitulo">Habilidar/Deshabilitar usuarios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table id="tablaUsuariosStatus" class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Usuario</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contentTableStatus" class="tbodyDiv"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar ventana</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <?php
     include("includes/footer.html");
     if (isset($_GET['message'])) {
-        if ($_GET['message'] === "ok") $utilidades::message("Registro eliminado exitosamente", "1");
-        else $utilidades::message("El registro no se elimino", "2");
+        if ($_GET['message'] === "ok") $utilidades::message("Registro actualizado exitosamente", "1");
+        else $utilidades::message("El registro no se a actualizado", "2");
     }
     ?>
 </body>

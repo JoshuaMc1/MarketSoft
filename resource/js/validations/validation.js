@@ -6,7 +6,7 @@ $(document).ready(function () {
     let tabla = $('#tableAdminUser').DataTable({
         "destroy": true,
         "ajax": {
-            "url": "php/users/tablaUsuarios.php",
+            "url": "php/users/tablaUsuarios",
             "dataSrc": ''
         },
         "columns": [
@@ -31,7 +31,7 @@ $(document).ready(function () {
     let tablaPermisos = $("#tablePermissions").DataTable({
         "destroy": true,
         "ajax": {
-            "url": "php/users/tablaPermisos.php",
+            "url": "php/users/tablaPermisos",
             "dataSrc": ''
         },
         "columns": [
@@ -140,6 +140,32 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    $.ajax({
+        type: "GET",
+        url: "php/users/tablaEstadoUsuario",
+        data: "data",
+        dataType: "json",
+        success: function (response) {
+            for (let i = 0; i < response.length; i++) {
+                var boton;
+                var est;
+                if(response[i].status == '1'){
+                    est = '<span class="badge bg-success">'+response[i].Estado+'</span>';
+                    boton = '<a class="btn btn-primary btn-sm" href="php/users/activarDesactivarUsuario?value=0&u='+response[i].id+'" role="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Desactivar"><i class="fas fa-eye-slash"></i></a>';
+                }else {
+                    est = '<span class="badge bg-danger">'+response[i].Estado+'</span>';
+                    boton = '<a class="btn btn-primary btn-sm" href="php/users/activarDesactivarUsuario?value=1&u='+response[i].id+'" role="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Activar"><i class="fas fa-eye"></i></a>';
+                }
+                var nuevafila = "<tr><td>" +
+                response[i].id + "</td><td>" +
+                response[i].usuario + "</td><td class=\"text-center\"><div class=\"d-grid\">" +
+                est + "</div></td><td class=\"text-center\">" +
+                boton + "</td></tr>";
+                $("#contentTableStatus").append(nuevafila);
+            }
+        }
+    });
+
     $("#btnImagen").change(function () { 
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -171,4 +197,9 @@ $(document).ready(function () {
         alertify.set("notifier", "position", "top-center");
         alertify.error(msg);
     }
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
 });
