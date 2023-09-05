@@ -1,0 +1,85 @@
+.icon-shape {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    border-radius: 0.5rem;
+}
+
+.icon-shape i {
+    color: #fff;
+    opacity: 0.8;
+    top: 11px;
+    position: relative;
+}
+
+.icon-shape .ni {
+    top: 14px;
+}
+
+.icon-lg {
+    width: 64px;
+    height: 64px;
+}
+
+.icon-lg i {
+    top: 31%;
+    font-size: 1.5rem;
+}
+
+.bg-gradient-primary2 {
+    background: linear-gradient(195deg, #EC407A 0%, #D81B60 100%);
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(195deg, #747b8a 0%, #495361 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(195deg, #66BB6A 0%, #43A047 100%);
+}
+
+.bg-gradient-info {
+    background: linear-gradient(195deg, #49a3f1 0%, #1A73E8 100%);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(195deg, #FFA726 0%, #FB8C00 100%);
+}
+
+.bg-gradient-danger {
+    background: linear-gradient(195deg, #EF5350 0%, #E53935 100%);
+}
+
+.bg-gradient-light {
+    background: linear-gradient(195deg, #EBEFF4 0%, #CED4DA 100%);
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(195deg, #42424a 0%, #191919 100%);
+}
+
+.shadow-dark {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(64, 64, 64, 0.4) !important;
+}
+
+.border-radius-xl {
+    border-radius: 0.75rem;
+}
+
+.opacity-10 {
+    opacity: 1 !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.font-weight-bolder {
+    font-weight: 700 !important;
+}
+
+hr.horizontal {
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4), transparent);
+}
+
+/*  */

@@ -19,7 +19,7 @@
             <div class="col-lg-12">
                 <div class="card shadow my-4">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                        <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                             <h5 class="text-white text-capitalize ps-3">Titulo</h5>
                         </div>
                     </div>

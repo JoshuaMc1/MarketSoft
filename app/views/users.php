@@ -35,14 +35,15 @@ $navbar = new navbar;
                                 <div class="col-lg-3 my-4">
                                     <div class="card">
                                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                            <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                            <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                 <h5 class="text-white text-capitalize ps-3"><i class="fas fa-camera"></i> Foto de perfil</h5>
                                             </div>
                                         </div>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-lg-12 mb-3">
-                                                    <img src="<?php echo $__DIR__?>resource/uploads/users/nophoto.png" class="img-fluid" id="imgPerfil" alt="Foto de perfil">
+                                                    <!-- <img src="<?php echo $__DIR__?>resource/uploads/users/nophoto.png" class="img-fluid" id="imgPerfil" alt="Foto de perfil"> -->
+                                                    <img src="<?php echo $__DIR__?>resource/uploads/users/nophoto.svg" class="img-fluid" id="imgPerfil" alt="Foto de perfil">
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
@@ -59,7 +60,7 @@ $navbar = new navbar;
                                         <div class="col-lg-8 my-4">
                                             <div class="card">
                                                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                                    <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                                    <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                         <h5 class="text-white text-capitalize ps-3"><i class="fas fa-user"></i> Datos del usuario</h5>
                                                     </div>
                                                 </div>
@@ -122,7 +123,7 @@ $navbar = new navbar;
                                                 <div class="col-lg-12 mb-3">
                                                     <div class="card">
                                                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                                            <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                                            <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                                 <h5 class="text-white text-capitalize ps-3"><i class="fas fa-user-shield"></i> Permisos del usuario</h5>
                                                             </div>
                                                         </div>

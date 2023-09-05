@@ -36,7 +36,7 @@ $navbar = new navbar;
                                     <div class="col-lg-9">
                                         <div class="card">
                                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                                <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                                <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                     <h5 class="text-white text-capitalize ps-3"><i class="fas fa-user"></i> Datos del usuario</h5>
                                                 </div>
                                             </div>
@@ -44,7 +44,8 @@ $navbar = new navbar;
                                                 <form action="php/users/updateUser" method="POST" enctype="multipart/form-data" id="formAdminUser">
                                                     <div class="row">
                                                         <div class="col-lg-4 mb-2 text-center">
-                                                            <img src="<?php echo $__DIR__ ?>resource/uploads/users/nophoto.png" class="img-fluid" id="imgPerfil" alt="Foto de perfil">
+                                                            <!-- <img src="<?php echo $__DIR__?>resource/uploads/users/nophoto.png" class="img-fluid" id="imgPerfil" alt="Foto de perfil"> -->
+                                                            <img src="<?php echo $__DIR__ ?>resource/uploads/users/nophoto.svg" class="img-fluid" id="imgPerfil" alt="Foto de perfil">
                                                         </div>
                                                         <div class="col-lg-8 mb-2">
                                                             <div class="row">
@@ -110,7 +111,7 @@ $navbar = new navbar;
                                             <div class="col-lg-12 mb-4">
                                                 <div class="card">
                                                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                                        <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                                        <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                             <h5 class="text-white text-capitalize ps-3"><i class="fas fa-user-shield"></i> Editar permisos</h5>
                                                         </div>
                                                     </div>
@@ -124,7 +125,7 @@ $navbar = new navbar;
                                             <div class="col-lg-12 my-4">
                                                 <div class="card">
                                                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                                        <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                                        <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                             <h5 class="text-white text-capitalize ps-3"><i class="fas fa-user-slash"></i> Activar/desactivar usuarios</h5>
                                                         </div>
                                                     </div>
@@ -142,7 +143,7 @@ $navbar = new navbar;
                             <div class="col-lg-12 my-4">
                                 <div class="card">
                                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                        <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                        <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                             <h5 class="text-white text-capitalize ps-3"><i class="fas fa-clipboard-list"></i> Tabla usuarios</h5>
                                         </div>
                                     </div>
@@ -178,7 +179,7 @@ $navbar = new navbar;
 
         <!-- Modal eliminar usuarios -->
         <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
-            <div class="modal-dialog bd-light">
+            <div class="modal-dialog bg-light">
                 <div class="modal-content">
                     <form action="php/users/deleteUser" method="POST" id="formEliminarUsuario">
                         <div class="modal-header">
@@ -200,7 +201,7 @@ $navbar = new navbar;
 
         <!-- Modal actualizar permisos de usuarios -->
         <div class="modal fade" id="modalPermisos" tabindex="-1" aria-labelledby="Permisos de usuarios" aria-hidden="true">
-            <div class="modal-dialog modal-lg bd-light">
+            <div class="modal-dialog modal-lg bg-light ">
                 <div class="modal-content">
                     <form action="php/users/updatePermissions" method="POST" id="formPermisos">
                         <div class="modal-header">
@@ -212,7 +213,7 @@ $navbar = new navbar;
                                 <div class="col-lg-12 my-4">
                                     <div class="card">
                                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                            <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                            <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                 <h5 class="text-white text-capitalize ps-3"><i class="fas fa-user-shield"></i> Permisos del usuario</h5>
                                             </div>
                                         </div>
@@ -260,7 +261,7 @@ $navbar = new navbar;
                                 <div class="col-lg-12 my-4">
                                     <div class="card">
                                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                            <div class="bg-gradient-primary shadow border-radius-lg pt-4 pb-3">
+                                            <div class="bg-gradient-dark shadow border-radius-lg pt-4 pb-3">
                                                 <h5 class="text-white text-capitalize ps-3">Tabla permisos de usuario</h5>
                                             </div>
                                         </div>
@@ -296,7 +297,7 @@ $navbar = new navbar;
 
         <!-- Modal activar o desactivar usuarios -->
         <div class="modal fade" id="modalUsuariosActivos" tabindex="-1" aria-labelledby="Usuarios activos e inactivos" aria-hidden="true">
-            <div class="modal-dialog modal-lg bd-light">
+            <div class="modal-dialog modal-lg bg-light">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalTitulo">Habilidar/Deshabilitar usuarios</h5>
